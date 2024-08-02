@@ -1,0 +1,949 @@
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>OPTOIn2024</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript"></script>
+    <script src="js/bootstrap.min.css"></script>
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script>
+        // Close navbar when a nav-link is clicked (for mobile view)
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function (elem) {
+            elem.addEventListener('click', function () {
+                var navbarCollapse = document.querySelector('.navbar-collapse');
+               // bootstrap.Collapse.getInstance(navbarCollapse).hide(); // Bootstrap 5
+                 $('.navbar-collapse').collapse('hide'); // Bootstrap 4 (if using jQuery)
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        .avatar {
+            vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            border-radius: 20%;
+        }
+
+        .auto-style6 {
+            font-size: x-large;
+        }
+
+        .navbar {
+            padding-top: 9px;
+            z-index: 2;
+            position: fixed;
+            top: 1;
+            left: 1;
+            width: 100%;
+            background-color: #333;
+            color: #;
+            padding-bottom: 9px;
+        }
+
+        .imgsty {
+            vertical-align: middle;
+            width: 150px;
+            height: 150px;
+            border-radius: 20%;
+        }
+
+        .auto-style8 {
+            font-size: large;
+        }
+
+        .auto-style9 {
+            color: #000099;
+        }
+
+        .auto-style10 {
+            font-size: x-large;
+        }
+
+        .email-symbol::after {
+            content: '\0040';
+        }
+
+        ul {
+            margin: 0;
+            color: aliceblue;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: centre;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: darkblue;
+                }
+
+        .heading {
+            display: table-row;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .cell {
+            display: table-cell;
+            border: solid;
+            border-width: thin;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .th {
+            text-align: centre;
+            background-color: darkgray;
+        }
+
+        .image-container img {
+            transition: transform 0.5s ease-in-out;
+        }
+
+            .image-container img:hover {
+                transform: scale(1.3);
+            }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+            background-color: white;
+        }
+
+        .text-to-lines {
+            position: relative;
+            text-align: center;
+        }
+
+            .text-to-lines::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                border-top: 1px solid black;
+                padding-bottom: 2px;
+            }
+
+            .text-to-lines::after {
+                bottom: 0;
+            }
+
+        .center {
+            background: white;
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        info:link {
+            color: green;
+        }
+
+
+        info:visited {
+            color: green;
+        }
+
+
+        info:hover {
+            color: red;
+        }
+
+
+        info:active {
+            color: yellow;
+        }
+
+        .row .col {
+            height: 100px;
+        }
+
+        .auto-style20 {
+            text-align: left;
+            width: 656px;
+        }
+
+        .auto-style21 {
+            text-align: left;
+            width: 844px;
+        }
+
+        .auto-style20 {
+            text-align: left;
+            width: 30%;
+        }
+
+        .auto-style21 {
+            text-align: left;
+            width: 40%;
+        }
+
+        .auto-style22 {
+            width: 38px;
+            text-align: right;
+        }
+
+        .auto-style24 {
+            width: 5%;
+        }
+
+
+        .auto-style22 {
+            text-align: right;
+            width: 5%;
+        }
+
+
+        .auto-style45 {
+            text-align: left;
+            font-weight: bold;
+            background-color: #f7fff2;
+            width: auto;
+            border: 0px;
+            padding: 50px;
+            margin: 20px;
+        }
+
+        .auto-style28 {
+            text-align: center;
+            color: #FF0000;
+            font-weight: bold;
+        }
+
+
+        .auto-style46 {
+            color: #663300;
+            text-align: center;
+            font-family: Helvetica;
+        }
+
+
+        .auto-style47 {
+            font-family: "Mongolian Baiti";
+            color: #663300;
+        }
+
+
+        .auto-style50 {
+            font-family: sans-serif;
+            font-weight: normal;
+        }
+
+        .auto-style51 {
+            font-weight: normal;
+        }
+
+
+        .auto-style54 {
+            border-style: double;
+            border-color: inherit;
+            border-width: 2px;
+            text-align: justify;
+            font-weight: bold;
+            background-color: #f7fff2;
+            width: auto;
+            padding: 50px;
+            margin: 20px;
+        }
+
+
+        .auto-style60 {
+            font-size: large;
+            background-color: #CCFF99;
+        }
+
+
+        .auto-style62 {
+            text-align: left;
+            width: 30%;
+            height: 26px;
+        }
+
+        .auto-style63 {
+            text-align: left;
+            width: 34%;
+            height: 26px;
+        }
+
+
+        .auto-style64 {
+            text-align: left;
+            width: 34%;
+        }
+
+
+        .auto-style65 {
+            position: relative;
+            text-align: justify;
+        }
+
+
+        .auto-style66 {
+            text-align: center;
+            font-size: large;
+        }
+
+
+
+        .auto-style67 {
+            background: white;
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 1826px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div style=" background: linear-gradient(to top left, #9999ff 5%, #99ccff 90%)">
+        <div>
+            <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#0085ff;">
+                <div class="container-fluid">
+                    <a class="navbar-brand " href="#"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarcollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#"><font size="4">Home</font></a>
+                            </li>
+                            <li class="nav-item active">
+
+                                <a href="#AboutUS" class="nav-link js-scroll-trigger"><font size="4"> About Us </font></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#fees"><font size="4">Registration </font></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#Dates"><font size="4">Important Dates</font></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#Speakers"><font size="4">Speakers</font></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#AbstractSubmission"><font size="4">Abstract Submission</font></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#COMMITTEES"><font size="4">Committees</font></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#Sponsors"><font size="4">Sponsors</font></a>
+                            </li>
+
+                            <li class="nav-item active">
+                                <a class="nav-link js-scroll-trigger" href="#contact"><font size="4">Contact Us</font></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="center" style="padding-top: 10px;">
+            <img src="https://csio.res.in/upload/images/1896009935Website%20banner%20OSI.jpg" width="100%" />
+        </div>
+        <div class="auto-style67" id="AboutUS">
+            <img class="responsive" src="image2/OSI%20OPTOIn-2024%20Brochure_page-0002.jpg" Width="100%" />
+            <div class="auto-style45">
+                <div class="text-justify text-align=centre ">
+                    <div class="text-center  text-to-lines" style="background-color:whitesmoke"><span class="auto-style60"> &nbsp;ABOUT THE CONFERENCE</span></div>
+                    <br>
+                    <div class="auto-style65 text-to-lines" style="background:radial-gradient(circle at 18.6% 37.7%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 91%);">
+                        The annual Symposium of the Optical Society of India is the flagship conference in the broader area of optics and photonics in India.
+                        Researchers, Innovators, Scientists, Professors from all over the India and abroad take part in huge number in this conference to deliberate on scientific progress,
+                        technological innovations and related instruments. CSIR-CSIO is one of the leading national laboratory for optics and photonics instrumentation and
+                        therefore this jointly organised conference would provide an ideal platform for interaction among researchers, scientists, professors, industrialists, innovators, startups , etc. to participate,
+                        interact and showcase new products and technologies to a wider audience,
+                        who are direct users of these instruments.
+                    </div>
+
+                    <br />
+
+                </div>
+                <br />
+                <br>
+                <div class="text-center text-to-lines" style="background-color:whitesmoke"><span class="auto-style60"> &nbsp;SCOPE OF THE SYMPOSIUM </span></div><br>
+                <div class="text-justify text-to-lines" style="background: radial-gradient(circle at 18.6% 37.7%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 91%);">
+                    &nbsp;
+                    Contributory articles reporting original research on any of the following areas are invited for presentation during the conference.
+                    <br />
+                    <br />
+                    � Optical Design, Fabrication & Metrology (ODF)
+                    <br />
+                    � Optical Interferometry & Holography (HOL)
+                    <br />
+                    � Diffractive, Freeform, Adaptive, Integrated Optics and Silicon Photonics (DFA)
+                    <br />
+                    � Microscopy and Imaging Technologies (MIT)
+                    Fiber Optic Devices & Instrumentation (FOI)
+                    Nano-photonics, Plasmonics, & Metamaterials (NPM)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Photonics&nbsp;&nbsp; for 6G &THz Technologies (P6G)
+                    <br />
+                    � Optics for Space, Defence, and Aerospace Applications (SDA)
+                    <br />
+                    �
+                    Quantum Optical Technologies (QOT)
+                    <br />
+                    �Optoelectronic and Micro-opto-mechanical Devices (OMD)
+                    <br />
+                    �Augmented Reality, Virtual Reality and 3-Dimensional Displays (ARVR)
+                    <br />
+                    �Optical Coating Technologies (OCT)
+                    <br />
+                    �Optical Sensors (OS)
+                    <br />
+                    �Artificial-intelligence and Machine-Learning in optical instrumentation (AML)
+                    <br />
+                    �Bio-photonics & Medical Optics (BMO)
+                    <br />
+                    �Lasers and Nonlinear Optics (LNO)<br />
+
+                </div>
+            </div>
+            <div class="auto-style54" class="center">
+                There will be key note address,evening lectures,invited talks and oral & poster
+                presentations during the conference. Extended abstracts should be submitted
+                in the template available on the conference website:<span style="color:blue">www.csio.res.in</span>
+                <br><br>
+                We are planning to bring out a special issue on the theme of the conference in
+                the Journal of Optics (OSI-Springer). Papers presented at the conference could
+                be submitted with more details as full manuscripts for consideration in this
+                special issue. The submitted manuscripts will have to pass the standard peer
+                review process of the journal before acceptance. All accepted extended
+                abstracts will be published in conference proceedings. Best paper, and best
+                thesis will be awarded.
+
+                <br />
+
+            </div>
+
+        </div>
+        <div class="center" id="COMMITTEES">
+            <br><br><br>
+
+            <table class="table-hover " align="center">
+                <thead>
+                <th colspan="3" class="auto-style66" bgcolor="#fc0303">
+                    TECHNICAL PROGRAM COMMITTEE
+                </th>
+                <tr>
+                    <th scope="col" class="auto-style24"></th>
+                    <th scope="col" class="auto-style20">NAME</th>
+                    <th scope="col" class="auto-style64">AFFILATION</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="auto-style22">&nbsp;</th>
+                        <td class="auto-style20">Prof. Amarendra K Sarma</td>
+                        <td class="auto-style64">Indian Institute of Technology,Guwahati</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="auto-style22">&nbsp;</th>
+                        <td class="auto-style20">Prof. Arup Lal Chakraborty</td>
+                        <td class="auto-style64">Indian Institute of Technology,Gandhinagar</td>
+                    </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Ashish Aggarwal</td>
+                <td class="auto-style64">Guru Jambheshwar University of Science & Technology, Hisar</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Nirmalya Ghosh</td>
+                <td class="auto-style64">Indian Institute of Science Education and Research,Kolkata</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Deepa Venkitesh</td>
+                <td class="auto-style64">Indian Institute of Technology,Madras</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Dibakar Roy Chowdhury</td>
+                <td class="auto-style64">Mahindra University,Hyderabad </td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Goutam K Samanta</td>
+                <td class="auto-style64">Physical Research Laboratory,Ahmedabad </td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Harshwardhan Wanare</td>
+                <td class="auto-style64">Indian Institute of Technology,Kanpur</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Kamal P Singh</td>
+                <td class="auto-style64">Indian Institute of Science Education and Research,Mohali</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Dr. M Senthil Kumar</td>
+                <td class="auto-style64">ISRO -Space Applications Centre,Ahmedabad</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Naveen K Nischal</td>
+                <td class="auto-style64">Indian Institute of Technology,Patna</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Rajan Jha</td>
+                <td class="auto-style64">Indian Institute of Technology,Bhubaneswar</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Mukesh Kumar</td>
+                <td class="auto-style64">Indian Institute of Technology,Ropar</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Rajesh V Nair </td>
+                <td class="auto-style64">Indian Institute of Technology,Ropar</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Rakesh K Singh</td>
+                <td class="auto-style64">Indian Institute of Technology,BHU </td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Renu John</td>
+                <td class="auto-style64">Indian Institute of Technology,Hyderabad</td>
+                </tr>
+                </tr>
+                <th scope="row" class="auto-style22"></th>
+                <td class="auto-style62">Prof. Sachin Kumar Srivastava</td>
+                <td class="auto-style63">Indian Institute of Technology,Roorkee </td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Shailendra K Varshney </td>
+                <td class="auto-style64">Indian Institute of Technology,Kharagpur </td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Sriganesh Prabhu</td>
+                <td class="auto-style64">Tata Institute of Fundamental Research,Mumbai</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. S K Ghoshal</td>
+                <td class="auto-style64">University of Technology Malaysia,Malaysia</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Tapajyoti Das Gupta</td>
+                <td class="auto-style64">Indian Institute of Sciences,Bangalore</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Bosanta Ranjan Boruah</td>
+                <td class="auto-style64">Indian Institute of Technology,Guwahati</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Venugopal Rao Soma</td>
+                <td class="auto-style64">University of Hyderabad</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Pramod Gopinath</td>
+                <td class="auto-style64">Cochin University of Science and Technology,Kerala</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. B K Das</td>
+                <td class="auto-style64">Indian Institute of Technology,Madras</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Nirmal Visvanathan</td>
+                <td class="auto-style64">University of Hyderabad</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table-hover" align="center">
+                <thead>
+                <th colspan="3" class="auto-style66" bgcolor="#fc0303">
+                    ADVISORY PROGRAM COMMITTEE
+                </th>
+                <tr>
+                    <th scope="col" class="auto-style24"></th>
+                    <th scope="col" class="auto-style20">NAME</th>
+                    <th scope="col" class="auto-style21">AFFILATION</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="auto-style22">&nbsp;</th>
+                        <td class="auto-style20">Prof. Ajay Kumar</td>
+                        <td class="auto-style21">DRDO -Instruments Research and Development Establishment,Dehradun</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="auto-style22">&nbsp;</th>
+                        <td class="auto-style20">Prof. Alika Khare</td>
+                        <td class="auto-style21">Indian Institute of Technology,Guwahati</td>
+                    </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Anurag Sharma</td>
+                <td class="auto-style21">Indian Institute of Technology,Delhi</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. S.Asokan</td>
+                <td class="auto-style21">Indian Institute of Sciences,Bangalore</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. A R&nbsp;Ganesan</td>
+                <td class="auto-style21">Indian Institute of Technology,Madras</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Balpreet Singh Ahluwalia</td>
+                <td class="auto-style21">UiT The Arctic University of Norway</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Bhanu P Singh</td>
+                <td class="auto-style21">Indian Institute of Technology,Bombay</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Bishnu Pal</td>
+                <td class="auto-style21">Mahindra University,Hyderabad</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Chandra Shekhar</td>
+                <td class="auto-style21">Indian Institute of Technology,Delhi</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Chennupati Jagadish </td>
+                <td class="auto-style21">Australian National University</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. C.S. Narayanmurty</td>
+                <td class="auto-style21">Indian Institute of Space Science and Technology,Thiruvananthapuram</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Devendra Mohan </td>
+                <td class="auto-style21">Guru Jambheshwar University of Science &amp; Technology,Hisar</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Enakshi Sharma</td>
+                <td class="auto-style21">Delhi University</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. G.P. Agarwal</td>
+                <td class="auto-style21">University of Rochester</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Jagganath Nayak</td>
+                <td class="auto-style21">DRDO-Centre for High Energy System &amp; Sciences,Hyderabad</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Jae-Hyeung Park</td>
+                <td class="auto-style21">Seoul National University</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Jorge Ojeda-Castaneda</td>
+                <td class="auto-style21">University of Guanajuato,Mexico</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Kallol Bhattacharya</td>
+                <td class="auto-style21">University of Calcutta</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Kehar Singh</td>
+                <td class="auto-style21">Indian Institute of Technology,Delhi</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Kenji Yamamoto</td>
+                <td class="auto-style21">Tokushima University,Japan</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. K.V. Sriram</td>
+                <td class="auto-style21">Laboratory for Electro-Optics Systems -ISRO,Bengaluru</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. L.N. Hazra</td>
+                <td class="auto-style21">University of Calcutta</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. M.R. Senoy</td>
+                <td class="auto-style21">Indian Institute of Technology,Delhi</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Osamu Matoba</td>
+                <td class="auto-style21">Kobe university , Japan</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. P.K. Gupta </td>
+                <td class="auto-style21">Indian academy of Sciences,New Delhi</td>
+                </tr></tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Prem Kumar</td>
+                <td class="auto-style21">Northwestern University,USA</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. R.Vijaya</td>
+                <td class="auto-style21">Indian Institute of Technology,Kanpur</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. R.K. Shevgaonkar</td>
+                <td class="auto-style21">Indian Institute of Technology,Bombay</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Rajpal S.Sirohi</td>
+                <td class="auto-style21">Alabama A&amp;M University,USA</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Rudra Pratap</td>
+                <td class="auto-style21">Plaksha University,Punjab</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Ranjan Sen</td>
+                <td class="auto-style21">CSIR-Central Glass and Ceramics Research Institute,Kolkata</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. S. Dutta Gupta</td>
+                <td class="auto-style21">Tata Institute of Fundamental Research,Hyderabad</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. S. Ramchandran</td>
+                <td class="auto-style21">Boston University,Massachusetts</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Sangeeta Kale</td>
+                <td class="auto-style21">Defence Institute of Advanced Technology,Pune</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Subhananda Chakraborty</td>
+                <td class="auto-style21">Indian Institute of Technology,Bombay</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. T. Srinivas</td>
+                <td class="auto-style21">Indian Institute of&nbsp; Sciences,Bangalore</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Thomas krauss</td>
+                <td class="auto-style21">University of York,England</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Tomoyoshi Shimobaba</td>
+                <td class="auto-style21">Chiba University,Japan</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Vipul Rastogi</td>
+                <td class="auto-style21">Indian Institute of Technology,Roorkee</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. R.P. Singh</td>
+                <td class="auto-style21">CSIR -National Physical Laboratory,Delhi</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Partha P. Banerjee</td>
+                <td class="auto-style21">University of Dayton,USA</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Jannick Rolland</td>
+                <td class="auto-style21">University of Rochester</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. V Rama Gopal Rao</td>
+                <td class="auto-style21">VC BITS</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Peter J. de Groot</td>
+                <td class="auto-style21">Zygo Corporation</td>
+                </tr>
+                <th scope="row" class="auto-style22">&nbsp;</th>
+                <td class="auto-style20">Prof. Prasad A. Naik</td>
+                <td class="auto-style21">BITS Pilani</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div>
+            <br />
+        </div>
+
+        <div class="center" id="Dates">
+            <br /><br />
+            <img src="image2/Dates.png" Width="100%" />
+        </div>
+
+        <div class="center" id="fees">
+            <img src="image2/RegFee.PNG" Width="100%" />
+        </div>
+        <div class="center" id="AbstractSubmission" style="background: radial-gradient(circle at center, aqua, transparent);text-align: center;">
+            <br>
+            <span class="auto-style9">
+                <span class="auto-style6">
+                    &nbsp;<br />
+                    Email for Abstract Submission:<br />
+                </span>
+            </span>
+            <span class="auto-style8"><strong><span class="auto-style9">abs.optoin24@csio.res.in</span></strong></span><br>
+            <div class="auto-style54">
+                Important Instruction for Abstract Submission to OPTOIn-2024 conference:
+                <br />
+                <br />
+                1. The authors are advised to prepare the manuscript as per the template of the OPTOIn-2024 conference. <br />
+                2. Please click here to download the manuscript template for the OPTOIn-2024.
+                <br />
+                3. All the relevant information and the submitted paper must be written in English. Both new research and work-in-progress are welcome for submission.
+                <br />
+                4. The authors should name the prepared manuscript in the following manner: Abbreviated form of Research Area_Title of the paper. The abbreviated forms of research areas are given on the website. For example, if your manuscript comes under the scope of Optical Design, Fabrication and Metrology (ODF) and title of manuscript is �Design of IR camera lens system� then write name of manuscript file as: ODF_design-of-IR-camera-lens-system.
+                <br />
+                5. The abstract of the submitted conference paper should outline the brief summary of the research work and restricted within the word limit of 100 words.
+                <br />
+                6. The authors are supposed to send both .PDF and .DOCX file of the conference paper to the official email-address (abs.optoin24@csio.res.in) for paper submission.
+                <br />
+                7. Authors are invited to submit the conference paper only in electronic formats. The required instructions are published on the conference website.
+                <br />
+                8. The acceptance and rejection of the conference papers is based on the peer review of the submitted paper(s).<br />
+                * For
+                <info>Important Instruction for Abstract Submission <a href="Instructions%20for%20abstract%20submission_OPTOIn-2024r%20(1).pdf" target="_blank"> CLICK HERE</a> </info>
+
+            </div>
+        </div>
+
+        <div class="center" id="Speakers" style="background: radial-gradient(circle at -2.1% -3.7%, rgba(254, 226, 2, 0.42) 0.1%, rgb(60, 187, 240) 101.2%);">
+            <br><br><br>
+            <h1 class="auto-style46"><strong>Speakers</strong></h1><br><br><br>
+            <div class="container ">
+
+
+                <div class="row">
+                    <div class="col-sm image-container"> <img src="speakers/1_Prof.%20A.R%20Ganeshan.jpg.jpg" class="imgsty" /><p>Prof. A.R Ganeshan <br> (IIT , Madras)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/32_Prof.%20Achanta%20Venugopal.bmp" class="imgsty" /><p> Prof. Achanta Venugopal <br>(CSIR-NPL,Delhi)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/30_Dr%20Amit%20Aggarwal.jpg" class="imgsty" /><p> Dr. Amit Agarwal<br>(University of Cambridge)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/2_Prof.%20Anurag%20Sharma.jpg" class="imgsty" /><p>Prof. Anurag Sharma <br>(IIT,Delhi)</p></div>
+                    <div class="col-sm image-container"> <img src="speakers/18_Prof.%20Arun%20Ananad.jpg" class="imgsty" /><p> Prof. Arun Ananad<br>(SPU,Gujrat)</p></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm image-container"><img src="speakers/3_Prof.%20Arup%20Lal%20Chakraborty.jpg" class="imgsty" /><p>Prof. Arup Lal Chakraborty <br>(IIT, Gandhinagar)</p></div>
+                    <div class="col-sm image-container"><img src=" speakers/14_Prof.%20Ashish%20Aggarwal.jpg" class="imgsty" /><p> Prof. Ashish Aggarwal<br>(GJMUST,Hisar)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/4_Dr.%20Ashok%20Kumar.png" class="imgsty" /><p>Dr. Ashok Kumar <br>(IIST,Trivandrum)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/6_Bosanta%20Ranjan%20Boruah.jpg" class="imgsty" /><p>Prof. Bosanta Ranjan Boruah <br>(IIT,Guwahati)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/7_Prof.%20BVR%20Tata.JPG" class="imgsty" /><p>Prof. BVR Tata <br>(GITM,Visakhapatnam)</p></div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-sm image-container"><img src="speakers/9_Prof.%20D.S.%20Mehta.jpg" class="imgsty" /><p> Prof. D.S. Mehta<br>(IIT,Delhi)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/8_Prof.%20Deepa%20Venkitesh.png" class="imgsty" /><p>Prof. Deepa Venkitesh <br>(IIT,Madras)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/22_Prof.%20Devendra%20Mohan.png" class="imgsty" /><p>Prof. Devendra Mohan<br>(GJMUST,Hisar)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/10_Prof.%20Goutam%20K.%20Samanta.jpg" class="imgsty" /><p> Prof. Goutam K Samanta<br>(PRL,Ahmedabad)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/11_Prof.%20harshawardhan-wanare.jpg" class="imgsty" /><p>Prof. harshawardhan wanare <br>(IIT,Kanpur</p></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm image-container"><img src="speakers/29_Dr.%20Jackin.png" class="imgsty" /><p>Dr. Jackin <br>(Kyoto-IT,Japan)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/28_Prof.%20Kenji%20Yamamoto.jpg" class="imgsty" /><p>Prof. Kenji Yamamoto <br>(Tokushima University,Japan)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/12_Lakshminarayan-Hazra.png" class="imgsty" /><p> Prof. Lakshminarayan Hazra<br>(Calcutta University)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/31_Prof.%20Mukesh%20Kumar.jpg" class="imgsty" /><p>Prof. Mukesh Kumar<br>(IIT,Indore)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/13_Prof.%20Nirmal%20K.%20Viswanathan.jpg" class="imgsty" /><p>Prof. Nirmal Viswanathan  <br>(University of Hyderabad)</p></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm image-container"><img src="speakers/17_Prof%20Naveen%20K%20Nischal.png" class="imgsty" /><p> Prof. Naveen K Nischal<br>(IIT,Patna)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/20_Dr%20Prag%20Sharma.png" class="imgsty" /><p>Dr. Prag Sharma <br>(CSIR-NPL,Delhi)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/15_Prof.%20Rajan%20Jha.png" class="imgsty" /><p> Prof. Rajan Jha<br>(IIT,Bhubaneswar)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/16_Prof.%20Rakesh%20K.%20Singh.jpg" class="imgsty" /><p>Prof. Rakesh K. Singh <br>(IIT,BHU,Varanasi)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/21_Prof.%20Shanti%20Bhattacharya.jpg" class="imgsty" /><p> Prof. Shanti Bhattacharya<br>(IIT,Madras)</p></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm image-container"><img src="speakers/19_Prof.%20Sujata%20Sanghi.jpg" class="imgsty" /><p>Prof. Sujata Sanghi <br>(GJMUST)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/23_Prof.%20T.%20Srinivas.jpg" class="imgsty" /><p>Prof. T. Srinivas<br>(IIS,Bangalore)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/24_Prof.%20Tapajyoti%20Das%20Gupta.jpg" class="imgsty" /><p> Prof. Tapajyoti Das Gupta<br>(IIS,Bangalore)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/25_Prof.%20Tomoyoshi%20Shimobaba.jpg" class="imgsty" /><p>Prof. Tomoyoshi Shimobaba <br>(Chiba University,Japan)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/26_Prof.%20Venugopal%20Rao%20Soma.jpg" class="imgsty" /><p>Prof. Venugopal Rao Soma <br>(University of Hyderabad)</p></div>
+                </div>
+                <br>
+                <div class="row">
+
+                    <div class="col-sm image-container"><img src="speakers/27_Prof.%20Vipul%20Rastogi.jpg" class="imgsty" /><p>Prof. Vipul Rastogi <br>(IIT,Roorkee)</p></div>
+                    <div class="col-sm image-container"><img src="speakers/33_Prof.%20Yasuhiro.jpg" class="imgsty" /><p>Prof. Yasuhiro Awatsuji <br>(Kyoto-IT,Japan)</p></div>
+                    <div class="col-sm "></div>
+                    <div class="col-sm "></div>
+                    <div class="col-sm "></div>
+                </div>
+            </div>
+        </div>
+        <div class="center" id="Sponsors" style="text-align: center; background: radial-gradient(circle at center, aqua, transparent);">
+            <br>    <br>
+
+            <div class="auto-style45">
+                <div style="align-content:center" class="auto-style28">
+                    <h1 class="auto-style47"><strong>Details for Sponsorship</strong></h1>
+                </div><span class="auto-style51"><strong><br /> </strong></span><span class="auto-style50">
+                    <strong>
+                        The conference will be attended by professors of leading academic institutes like IITs,
+                        Central and State Universities, NITs, IISERs , etc. and scientists from leading R & D
+                        institutes of CSIR , DRDO, DAE, ISRO, etc. so this is the best opportunity for industry to
+                        showcase or launch their products in front of a wider audiences and users.
+                        Industry may take advantage of this unique platform to gain following benefits:
+                        <br />
+                        <br />
+                        � Launch of new products and highlight exciting ones. <br />
+                        � Increase brand awareness and elevate your company profile.
+                        <br />
+                        � Network with specialists, seek international partners and&nbsp;&nbsp;&nbsp; form new alliances. <br />
+                        � Increase visibility in focused markets. <br />
+                        � Communicate your message to a highly qualified scientific and expert community.
+                        <br />
+                        � Build relationships for the future.<br />
+                        � Attract new talent and strengthen partnerships.
+                        <br />
+                        � Generate sales leads and educate the market.<br>
+                        *
+                    </strong> <info><strong>For more details---> </strong> <a href="OSI%20OPTOIn-2024%20Sponsorship%20Brochure.pdf" target="_blank"> <strong>CLICK HERE</strong></a>
+                </span><b> </info>             </b>
+            </div>
+            <div class="responsive">
+                <img src="Details_Sponsors.jpg" width="70%" />
+
+                <br>
+
+                <info>For more details---> <a href="OSI%20OPTOIn-2024%20Sponsorship%20Brochure.pdf" target="_blank"> CLICK HERE</a> </info>
+
+            </div>
+
+            <div id="contact">
+                <table style="width:100%">
+                    <tr>
+                        <td colspan="4" class="text-center" style="background-image: url('image2/ContactHead.PNG')">
+                            <span class="auto-style9"><span class="auto-style6"><strong>Contact Details</strong></span></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-center">
+                            <span class="auto-style10">email Id:</span><strong><span class="auto-style10">&nbsp; </span> <span class="auto-style10 text-dark">optoin24@csio.res.in</span></strong><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">Dr. Raj Kumar<br />Convener<br />+91-1722672308</td>
+                        <td class="text-center">Dr. Umesh Kumar Tiwari<br />Co-Convener<br />+91-1722672282</td>
+                        <td class="text-center">Dr. Mukesh Kumar<br />Treasurer<br />+91-1722672487</td>
+                        <td class="text-center">Dr. Sudipta Sarkar Pal<br />Chairperson<br />+91-1722672483</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="background-image: url('image2/footer.PNG')">
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
